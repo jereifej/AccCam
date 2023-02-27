@@ -2,10 +2,10 @@ import cv2
 import numpy
 import time
 
-cap = cv2.VideoCapture(2, cv2.CAP_MSMF)
+cap = cv2.VideoCapture(1, cv2.CAP_MSMF)
 # Turn off auto exposure
 cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0)
-cap.set(cv2.CAP_PROP_FPS, 60)
+cap.set(cv2.CAP_PROP_FPS, 30)
 face = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 avgFPS = time.time()
@@ -16,7 +16,7 @@ while True:
     instFPS = time.time()
     if ret:
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        faces = face.detectMultiScale(gray, scaleFactor=2, minNeighbors=4)
+        faces = face.detectMultiScale(gray, scaleFactor=1.15, minNeighbors=4)
         # numpy.append(faces, face.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=4))
 
         for (x, y, w, h) in faces:

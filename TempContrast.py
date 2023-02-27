@@ -1,5 +1,4 @@
 import numpy as np
-import scipy
 import cv2
 import time
 
@@ -11,7 +10,7 @@ def threshold(frame):
     return out
 
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 # cap = cv2.VideoCapture('sample.mp4')
 
 ret, fc = cap.read()
