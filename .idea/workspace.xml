@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a9320bf-4210-48bd-8ff3-7dd041ea7863" name="Changes" comment="Added FSM behavior to incorporate parallel Optical Flow detection and Facial Recognition">
+    <list default="true" id="1a9320bf-4210-48bd-8ff3-7dd041ea7863" name="Changes" comment="- Integrate optical flow and face detection states into FSM, included code space for camera centering.&#10;- Clean up code&#10;- TODO: ???">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CV/FSM.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV/FSM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CV/FaceRecognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV/FaceRecognition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +70,7 @@
       <workItem from="1677535073418" duration="1701000" />
       <workItem from="1677694189726" duration="900000" />
       <workItem from="1677973999170" duration="5000" />
-      <workItem from="1678392930617" duration="14565000" />
+      <workItem from="1678392930617" duration="15177000" />
     </task>
     <task id="LOCAL-00001" summary="Now with virtual environment">
       <created>1677535490445</created>
@@ -108,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678398141728</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- Integrate optical flow and face detection states into FSM, included code space for camera centering.&#10;- Clean up code&#10;- TODO: ???">
+      <created>1678419425652</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678419425652</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +125,8 @@
     <MESSAGE value="Added CV &amp; NLP Files" />
     <MESSAGE value="Updated README.md" />
     <MESSAGE value="Added FSM behavior to incorporate parallel Optical Flow detection and Facial Recognition" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added FSM behavior to incorporate parallel Optical Flow detection and Facial Recognition" />
+    <MESSAGE value="- Integrate optical flow and face detection states into FSM, included code space for camera centering.&#10;- Clean up code&#10;- TODO: ???" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Integrate optical flow and face detection states into FSM, included code space for camera centering.&#10;- Clean up code&#10;- TODO: ???" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AccCam$TempContrast.coverage" NAME="TempContrast Coverage Results" MODIFIED="1678393470126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
