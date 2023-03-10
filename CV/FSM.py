@@ -1,7 +1,10 @@
 import numpy as np
 import cv2
+import time
 
+global fc, fp, WIN_NAME
 
+WIN_NAME = "Output"
 def threshold(difference):
     out = np.full_like(difference, 128)  # start and assume there are no events
     out[difference < -10] = 0  # if event is negative enough, OFF event
@@ -16,35 +19,91 @@ def accumulate(frame, width):
     return acc
 
 
+def optical_flow(cam, fc, fp):
+    while True:
+        ret, fc = cam.read()
+
+        if ret:
+            fc = cv2.cvtColor(fc, cv2.COLOR_BGR2GRAY)  # convert to grayscale
+            fc = cv2.GaussianBlur(fc, (9, 9), 20)  # blur bc my webcam is *fart noises*
+            fc = np.array(fc, dtype=int)
+            diff = fc - fp
+            ft = np.array(threshold(diff), dtype=np.uint8)  # subtract current and previous frame, then threshold
+            cv2.rectangle(ft, (int(WIDTH / 3), 0), (int(2 * WIDTH / 3), int(HEIGHT)), (255, 0, 0), 2)
+
+            acc = accumulate(ft, int(WIDTH))
+            if 5000 < acc < 1e5:
+                print(acc, "motion")
+                return True
+            cv2.imshow(WIN_NAME, ft)
+            fp = fc
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            return False
+
+
+def detect_face(cam, model):
+    start = time.time()
+    has_faces = False
+    pos = -1
+    while time.time() - start < 5 and not has_faces:
+
+        ret, frame = cam.read()
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        faces = model.detectMultiScale(gray, scaleFactor=1.15, minNeighbors=4)
+        if isinstance(faces, np.ndarray):
+            has_faces = True
+        for (x, y, w, h) in faces:
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
+            pos = x + int(w / 2)
+            cv2.imshow(WIN_NAME, frame)
+
+        return pos
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            return
+
+
+def center_camera(xpos, w):
+    # if the face is within the region, you good
+    if int(w/3) < xpos < int(2*w/3):
+        return
+
+    #
+    # DHINAR HERE #
+    #
+
+    time.sleep(1)
+    print("done moving to", xpos)
+
+
+
+# start main
 cap = cv2.VideoCapture(1, cv2.CAP_MSMF)
 face = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+
 
 ret, fc = cap.read()
 WIDTH = cap.get(3)
 HEIGHT = cap.get(4)
 fc = cv2.cvtColor(fc, cv2.COLOR_BGR2GRAY)
-fp = np.array(fc, dtype=int)
+fp = np.zeros_like(fc, dtype=int)
+
 while True:
-    ret, fc = cap.read()
+    # while there's no motion in outer region of frame
+    moving = optical_flow(cap, fc, fp)
 
-    if ret:
-        fc = cv2.cvtColor(fc, cv2.COLOR_BGR2GRAY)  # convert to grayscale
-        fc = cv2.GaussianBlur(fc, (9, 9), 20)  # blur bc my webcam is *fart noises*
-        fc = np.array(fc, dtype=int)
-        diff = fc - fp
-        ft = np.array(threshold(diff), dtype=np.uint8)  # subtract current and previous frame, then threshold
-        cv2.rectangle(ft, (int(WIDTH / 3), 0), (int(2*WIDTH / 3), int(HEIGHT)), (255, 0, 0), 2)
-        cv2.imshow('output', ft)
-        acc = accumulate(ft, int(WIDTH))
-        if acc > 5000:
-            print(acc, "motion")
-        fp = fc
+    # look for face in outer area for 2s or until detected
+    if moving:
+        pos = detect_face(cap, face)
+    print(pos)
 
+    # if face found, center camera... somehow
+    if pos != -1:
+        center_camera(pos, WIDTH)
 
-      # after showing temporal difference, assign current frame to previous frame
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 cap.release()
 cv2.destroyAllWindows()
-

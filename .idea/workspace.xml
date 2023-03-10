@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a9320bf-4210-48bd-8ff3-7dd041ea7863" name="Changes" comment="Updated README.md">
-      <change afterPath="$PROJECT_DIR$/CV/FSM.py" afterDir="false" />
+    <list default="true" id="1a9320bf-4210-48bd-8ff3-7dd041ea7863" name="Changes" comment="Added FSM behavior to incorporate parallel Optical Flow detection and Facial Recognition">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CV/TempContrast.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV/TempContrast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CV/FSM.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV/FSM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CV/FaceRecognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV/FaceRecognition.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
       <workItem from="1677535073418" duration="1701000" />
       <workItem from="1677694189726" duration="900000" />
       <workItem from="1677973999170" duration="5000" />
-      <workItem from="1678392930617" duration="5040000" />
+      <workItem from="1678392930617" duration="14565000" />
     </task>
     <task id="LOCAL-00001" summary="Now with virtual environment">
       <created>1677535490445</created>
@@ -101,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677696091494</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added FSM behavior to incorporate parallel Optical Flow detection and Facial Recognition">
+      <created>1678398141728</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678398141728</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,13 +118,14 @@
     <MESSAGE value="Now with virtual environment" />
     <MESSAGE value="Added CV &amp; NLP Files" />
     <MESSAGE value="Updated README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md" />
+    <MESSAGE value="Added FSM behavior to incorporate parallel Optical Flow detection and Facial Recognition" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added FSM behavior to incorporate parallel Optical Flow detection and Facial Recognition" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AccCam$TempContrast.coverage" NAME="TempContrast Coverage Results" MODIFIED="1678393470126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
     <SUITE FILE_PATH="coverage/AccCam$AudioTestLIVE.coverage" NAME="AudioTestLIVE Coverage Results" MODIFIED="1677536364439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
-    <SUITE FILE_PATH="coverage/AccCam$FSM.coverage" NAME="FSM Coverage Results" MODIFIED="1678398007568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
+    <SUITE FILE_PATH="coverage/AccCam$FSM.coverage" NAME="FSM Coverage Results" MODIFIED="1678418816880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
     <SUITE FILE_PATH="coverage/AccCam$audiotest.coverage" NAME="audiotest Coverage Results" MODIFIED="1677536354554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
-    <SUITE FILE_PATH="coverage/AccCam$FaceRecognition.coverage" NAME="FaceRecognition Coverage Results" MODIFIED="1677696017399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
+    <SUITE FILE_PATH="coverage/AccCam$FaceRecognition.coverage" NAME="FaceRecognition Coverage Results" MODIFIED="1678417708124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
   </component>
 </project>
