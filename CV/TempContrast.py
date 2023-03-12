@@ -16,7 +16,7 @@ cap = cv2.VideoCapture(1)
 ret, fc = cap.read()
 fc = cv2.cvtColor(fc, cv2.COLOR_BGR2GRAY)
 fp = np.array(fc, dtype=int)
-while 1:
+while True:
     ret, fc = cap.read()
     fc = cv2.cvtColor(fc, cv2.COLOR_BGR2GRAY)  # convert to grayscale
     fc = cv2.GaussianBlur(fc, (9, 9), 20)  # blur bc my webcam is *fart noises*
