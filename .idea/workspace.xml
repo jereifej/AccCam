@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a9320bf-4210-48bd-8ff3-7dd041ea7863" name="Changes" comment="Update README.md">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CV/FSM.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV/FSM.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +31,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2ML7aCIDVbvbeVxAGawuUkhscUX" />
   <component name="ProjectViewState">
@@ -69,7 +74,8 @@
       <workItem from="1677535073418" duration="1701000" />
       <workItem from="1677694189726" duration="900000" />
       <workItem from="1677973999170" duration="5000" />
-      <workItem from="1678392930617" duration="15682000" />
+      <workItem from="1678392930617" duration="16731000" />
+      <workItem from="1678630729670" duration="664000" />
     </task>
     <task id="LOCAL-00001" summary="Now with virtual environment">
       <created>1677535490445</created>
@@ -120,7 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678419733291</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update README.md">
+      <created>1678420281596</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678420281596</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update README.md">
+      <created>1678420727105</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678420727105</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +158,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AccCam$TempContrast.coverage" NAME="TempContrast Coverage Results" MODIFIED="1678393470126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
     <SUITE FILE_PATH="coverage/AccCam$AudioTestLIVE.coverage" NAME="AudioTestLIVE Coverage Results" MODIFIED="1677536364439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
-    <SUITE FILE_PATH="coverage/AccCam$FSM.coverage" NAME="FSM Coverage Results" MODIFIED="1678418816880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
+    <SUITE FILE_PATH="coverage/AccCam$FSM.coverage" NAME="FSM Coverage Results" MODIFIED="1678630964530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
     <SUITE FILE_PATH="coverage/AccCam$audiotest.coverage" NAME="audiotest Coverage Results" MODIFIED="1677536354554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
     <SUITE FILE_PATH="coverage/AccCam$FaceRecognition.coverage" NAME="FaceRecognition Coverage Results" MODIFIED="1678417708124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
   </component>

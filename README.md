@@ -22,4 +22,5 @@ Accessibility Enabled Camera with Closed Captioning and Motion Tracking for Sr D
 - Haar Cascade Paper: https://www.researchgate.net/publication/220660094_Robust_Real-Time_Face_Detection
 
 ---
+
 *This project aims to fulfill University of Pittsburgh Swanson School of Engineer's Electrical and Computer Engineering Senior Design Capstone Project*

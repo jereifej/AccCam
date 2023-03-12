@@ -30,7 +30,7 @@ def optical_flow(cam, fc, fp):
             diff = fc - fp
             ft = np.array(threshold(diff), dtype=np.uint8)  # subtract current and previous frame, then threshold
             cv2.rectangle(ft, (int(WIDTH / 3), 0), (int(2 * WIDTH / 3), int(HEIGHT)), (255, 0, 0), 2)
-
+            cv2.rectangle(ft, (int(WIDTH / 2), 0), (int(WIDTH / 2), int(HEIGHT)), (255, 0, 0), 2)
             acc = accumulate(ft, int(WIDTH))
             if 5000 < acc < 1e5:
                 print(acc, "motion")
@@ -101,6 +101,7 @@ while True:
     # if face found, center camera... somehow
     if pos != -1:
         center_camera(pos, WIDTH)
+    else: print("face not found")
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
