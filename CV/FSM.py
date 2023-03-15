@@ -1,6 +1,11 @@
 import numpy as np
 import cv2
 import time
+from gpiozero import Servo
+from gpiozero.pins.pigpio import PiGPIOFactory
+
+factory = PiGPIOFactory()
+servo = Servo(25, min_pulse_width=0.5/1000, max_pulse_width=2.4/1000, pin_factory=factory)      # need to change min n max pwm
 
 global fc, fp, WIN_NAME
 
@@ -23,14 +28,14 @@ def optical_flow(cam, fc, fp):
     while True:
         ret, fc = cam.read()
 
-        if ret:
+        if ret:     # if there's a frame
             fc = cv2.cvtColor(fc, cv2.COLOR_BGR2GRAY)  # convert to grayscale
             fc = cv2.GaussianBlur(fc, (9, 9), 20)  # blur bc my webcam is *fart noises*
             fc = np.array(fc, dtype=int)
-            diff = fc - fp
+            diff = fc - fp      # subtracts current frame from background
             ft = np.array(threshold(diff), dtype=np.uint8)  # subtract current and previous frame, then threshold
-            cv2.rectangle(ft, (int(WIDTH / 3), 0), (int(2 * WIDTH / 3), int(HEIGHT)), (255, 0, 0), 2)
-            cv2.rectangle(ft, (int(WIDTH / 2), 0), (int(WIDTH / 2), int(HEIGHT)), (255, 0, 0), 2)
+            cv2.rectangle(ft, (int(WIDTH / 3), 0), (int(2 * WIDTH / 3), int(HEIGHT)), (255, 0, 0), 2)   # square
+            cv2.rectangle(ft, (int(WIDTH / 2), 0), (int(WIDTH / 2), int(HEIGHT)), (255, 0, 0), 2)       # split the frame equally
             acc = accumulate(ft, int(WIDTH))
             if 5000 < acc < 1e5:
                 print(acc, "motion")
@@ -38,7 +43,7 @@ def optical_flow(cam, fc, fp):
             cv2.imshow(WIN_NAME, ft)
             fp = fc
 
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if cv2.waitKey(1) & 0xFF == ord('q'):       # show frame through webcam
             return False
 
 
@@ -68,28 +73,32 @@ def center_camera(xpos, w):
     # if the face is within the region, you good
     if int(w/3) < xpos < int(2*w/3):
         return
+    else:
+        if xpos < int(w/3):
+            position -= 1       # call servo blaster decrement angle
+        elif xpos > int(2*w/3):
+            position += 1       # call servo blaster increment angle
 
-    #
-    # DHINAR HERE #
-    #
-
+    servo.angle = position
     time.sleep(1)
     print("done moving to", xpos)
 
 
 
 # start main
-cap = cv2.VideoCapture(1, cv2.CAP_MSMF)
+cap = cv2.VideoCapture(0, cv2.CAP_MSMF)
 face = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+# initial position of the motor
+position = 90
 
-
-ret, fc = cap.read()
-WIDTH = cap.get(3)
-HEIGHT = cap.get(4)
-fc = cv2.cvtColor(fc, cv2.COLOR_BGR2GRAY)
-fp = np.zeros_like(fc, dtype=int)
+ret, fc = cap.read()        # reads the frame, bool var returns true if frame is available
+WIDTH = cap.get(3)          # check the frame width
+HEIGHT = cap.get(4)         # check the frame height
+fc = cv2.cvtColor(fc, cv2.COLOR_BGR2GRAY)   # change the color space to grey
+fp = np.zeros_like(fc, dtype=int)           # return an array of zeros w/ the same data types
 
 while True:
+
     # while there's no motion in outer region of frame
     moving = optical_flow(cap, fc, fp)
 
