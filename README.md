@@ -2,9 +2,13 @@
 Accessibility Enabled Camera with Closed Captioning and Motion Tracking for Sr Design Capstone Project
 
 ### Notes:
-- Enabling the *imshow* function increases the latency (use for testing)
+- Enabling the `imshow` function increases the latency (use for testing)
 - FSM integrates both *FaceRecognition.py* and *TempContrast.py* scripts.
 - Both live and prerecorded audio recognition scripts use Google Speech Recognition
+- For the `cap = cv2.VideoCapture(2)`, I have this set up, so it looks for our webcam. 
+  - Mess around with the integer parameter until you find the camera you're looking for 
+- If using an Arducam/Pi camera module, the framerate will significantly drop 
+  - We found that using an external webcam connected to our servo yields good results
 
 ### Done:
 - Image Recognition
@@ -14,7 +18,7 @@ Accessibility Enabled Camera with Closed Captioning and Motion Tracking for Sr D
 ### TODO:
 - Camera Centering
 - Multiprocess NLP and CV
-- Multithread CV processing and *imread*
+- Multithread CV processing and `imread`
 - Tweak and tune recognition parameters
 
 ### Sources:

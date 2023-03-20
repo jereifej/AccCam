@@ -9,8 +9,14 @@ def threshold(frame):
     out[frame > 10] = 255  # if event is positive enough, ON event
     return out
 
+cap = cv2.VideoCapture(2)
+# for i in range(501):
+#     cap = cv2.VideoCapture(i)
+#     if cap.isOpened():
+#         print(i)
+#         cap.release()
 
-cap = cv2.VideoCapture(1)
+
 # cap = cv2.VideoCapture('sample.mp4')
 
 ret, fc = cap.read()
