@@ -1,11 +1,7 @@
 import numpy as np
 import cv2
 import time
-from gpiozero import Servo
-from gpiozero.pins.pigpio import PiGPIOFactory
-
-factory = PiGPIOFactory()
-servo = Servo(25, min_pulse_width=0.5/1000, max_pulse_width=2.4/1000, pin_factory=factory)      # need to change min n max pwm
+import serial
 
 global fc, fp, WIN_NAME
 
@@ -38,7 +34,7 @@ def optical_flow(cam, fc, fp):
             cv2.rectangle(ft, (int(WIDTH / 2), 0), (int(WIDTH / 2), int(HEIGHT)), (255, 0, 0), 2)       # split the frame equally
             acc = accumulate(ft, int(WIDTH))
             if 5000 < acc < 1e5:
-                print(acc, "motion")
+                #print(acc, "motion")
                 return True
             cv2.imshow(WIN_NAME, ft)
             fp = fc
@@ -73,15 +69,11 @@ def center_camera(xpos, w):
     # if the face is within the region, you good
     if int(w/3) < xpos < int(2*w/3):
         return
-    else:
-        if xpos < int(w/3):
-            position -= 1       # call servo blaster decrement angle
-        elif xpos > int(2*w/3):
-            position += 1       # call servo blaster increment angle
-
-    servo.angle = position
+    #
+    #   calculate the step angle here
+    #
     time.sleep(1)
-    print("done moving to", xpos)
+    #print("done moving to", xpos)
 
 
 
@@ -97,6 +89,9 @@ HEIGHT = cap.get(4)         # check the frame height
 fc = cv2.cvtColor(fc, cv2.COLOR_BGR2GRAY)   # change the color space to grey
 fp = np.zeros_like(fc, dtype=int)           # return an array of zeros w/ the same data types
 
+# initialize serial comm
+ser = serial.Serial('COM16', 115200, timeout=1)
+
 while True:
 
     # while there's no motion in outer region of frame
@@ -105,7 +100,9 @@ while True:
     # look for face in outer area for 2s or until detected
     if moving:
         pos = detect_face(cap, face)
-    print(pos)
+    print("xpos", pos)
+
+    #ser.write(int.to_bytes(pos, 2, 'big'))
 
     # if face found, center camera... somehow
     if pos != -1:
