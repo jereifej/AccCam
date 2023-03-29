@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import time
 
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("yeah!")
 # Turn off auto exposure
