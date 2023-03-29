@@ -102,7 +102,7 @@ while True:
         pos = detect_face(cap, face)
     print("xpos", pos)
 
-    #ser.write(int.to_bytes(pos, 2, 'big'))
+    ser.write(int.to_bytes(pos, 2, 'big'))
 
     # if face found, center camera... somehow
     if pos != -1:
