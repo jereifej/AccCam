@@ -46,7 +46,7 @@ def optical_flow(cam, fc, fp):
 def detect_face(cam, model):
     start = time.time()
     has_faces = False
-    pos = -1
+    pos = -1    # -1 ORIGINALLY
     while time.time() - start < 5 and not has_faces:
 
         ret, frame = cam.read()
@@ -100,9 +100,15 @@ while True:
     # look for face in outer area for 2s or until detected
     if moving:
         pos = detect_face(cap, face)
-    print("xpos", pos)
+        print("xpos", pos)
 
-    ser.write(int.to_bytes(pos, 2, 'big'))
+        # xpos mapping
+        if pos >= 0:
+            xpos = np.int32(((pos - 50) / (580-50)) * (255))
+            ser.write(int.to_bytes(abs(xpos.item()), 1, 'big'))     # send as positve integers
+
+            # calculate step angle
+            angle = np.int32(((xpos - 50)/(255-50)) * (2) + (-1))
 
     # if face found, center camera... somehow
     if pos != -1:
