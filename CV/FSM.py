@@ -47,7 +47,7 @@ def detect_face(cam, model):
     start = time.time()
     has_faces = False
     pos = -1    # -1 ORIGINALLY
-    while time.time() - start < 5 and not has_faces:
+    while not has_faces:    # wait 1 s    time.time() - start < 0.05
 
         ret, frame = cam.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -65,14 +65,15 @@ def detect_face(cam, model):
             return
 
 
-def center_camera(xpos, w):
+def center_camera():     # w, assuming is the same as WIDTH tf (0,640)
     # if the face is within the region, you good
-    if int(w/3) < xpos < int(2*w/3):
-        return
-    #
-    #   calculate the step angle here
-    #
-    time.sleep(1)
+    # if int(w/3) < xpos < int(2*w/3):
+    #     return
+    if pos >= 0:
+        xpos = np.int32(((pos) / (640)) * (255))        # map the position to (0,255)
+        ser.write(int.to_bytes(abs(xpos.item()), 1, 'big'))     # send xpos as a byte
+    return
+    #time.sleep(1)
     #print("done moving to", xpos)
 
 
@@ -91,7 +92,7 @@ fp = np.zeros_like(fc, dtype=int)           # return an array of zeros w/ the sa
 
 # initialize serial comm
 ser = serial.Serial('COM16', 115200, timeout=1)
-
+#print("frame width", WIDTH)
 while True:
 
     # while there's no motion in outer region of frame
@@ -101,18 +102,18 @@ while True:
     if moving:
         pos = detect_face(cap, face)
         print("xpos", pos)
-
         # xpos mapping
-        if pos >= 0:
-            xpos = np.int32(((pos - 50) / (580-50)) * (255))
-            ser.write(int.to_bytes(abs(xpos.item()), 1, 'big'))     # send as positve integers
+        # if pos >= 0:
+        #     xpos = np.int32(((pos) / (640)) * (255))
+        #     ser.write(int.to_bytes(abs(xpos.item()), 1, 'big'))     # send as positve integers
 
             # calculate step angle
-            angle = np.int32(((xpos - 50)/(255-50)) * (2) + (-1))
+            #angle = np.int32(((xpos - 50)/(255-50)) * (2) + (-1))
 
     # if face found, center camera... somehow
     if pos != -1:
-        center_camera(pos, WIDTH)
+        center_camera()
+
     else: print("face not found")
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
