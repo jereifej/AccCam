@@ -30,7 +30,7 @@ def optical_flow(cam, fc, fp):
             fc = np.array(fc, dtype=int)
             diff = fc - fp      # subtracts current frame from background
             ft = np.array(threshold(diff), dtype=np.uint8)  # subtract current and previous frame, then threshold
-            cv2.rectangle(ft, (int(WIDTH / 3), 0), (int(2 * WIDTH / 3), int(HEIGHT)), (255, 0, 0), 2)   # square
+            cv2.rectangle(ft, (int(WIDTH / 3), 0), (int(2 * WIDTH / 3), int(HEIGHT)), (255, 0, 0), 2)   # square w/3 < pos < 2w/3
             cv2.rectangle(ft, (int(WIDTH / 2), 0), (int(WIDTH / 2), int(HEIGHT)), (255, 0, 0), 2)       # split the frame equally
             acc = accumulate(ft, int(WIDTH))
             if 5000 < acc < 1e5:
@@ -47,7 +47,7 @@ def detect_face(cam, model):
     start = time.time()
     has_faces = False
     pos = -1    # -1 ORIGINALLY
-    while not has_faces:    # wait 1 s    time.time() - start < 0.05
+    while time.time() - start < 2 and not has_faces:    # wait 1 s    time.time() - start < 0.05
 
         ret, frame = cam.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -72,14 +72,15 @@ def center_camera():     # w, assuming is the same as WIDTH tf (0,640)
     if pos >= 0:
         xpos = np.int32(((pos) / (640)) * (255))        # map the position to (0,255)
         ser.write(int.to_bytes(abs(xpos.item()), 1, 'big'))     # send xpos as a byte
+    time.sleep(.5)
     return
-    #time.sleep(1)
+
     #print("done moving to", xpos)
 
 
 
 # start main
-cap = cv2.VideoCapture(0, cv2.CAP_MSMF)
+cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)              #CAP_MSMF)
 face = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 # initial position of the motor
 position = 90
@@ -91,7 +92,7 @@ fc = cv2.cvtColor(fc, cv2.COLOR_BGR2GRAY)   # change the color space to grey
 fp = np.zeros_like(fc, dtype=int)           # return an array of zeros w/ the same data types
 
 # initialize serial comm
-ser = serial.Serial('COM16', 115200, timeout=1)
+ser = serial.Serial('COM16', 115200, timeout=1)            #SERIAL
 #print("frame width", WIDTH)
 while True:
 
@@ -102,6 +103,7 @@ while True:
     if moving:
         pos = detect_face(cap, face)
         print("xpos", pos)
+        center_camera()
         # xpos mapping
         # if pos >= 0:
         #     xpos = np.int32(((pos) / (640)) * (255))
