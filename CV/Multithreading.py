@@ -5,7 +5,7 @@ import threading
 import speech_recognition as sr
 
 def faceRec() :
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
 
     if not cap.isOpened():
         print("yeah!")
@@ -28,20 +28,18 @@ def faceRec() :
 
             for (x, y, w, h) in faces:
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
-        print(isinstance(faces, tuple))
-        print(isinstance(faces, np.ndarray))
-        print("walter")
+        # print(isinstance(faces, tuple))
+        # print(isinstance(faces, np.ndarray))
         cv2.imshow('output', frame)
-        print("walter2")
         count += 1
         diff = time.time() - instFPS
         acc += diff
 
         # print("FPS: ", 1.0 / diff)  # FPS = 1 / time to process loop
-
+        print("Avg FPS: ", count / acc)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
-    print("Avg FPS: ", count / acc)
+
 
     cap.release()
     cv2.destroyAllWindows()
