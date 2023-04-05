@@ -2,13 +2,13 @@ import cv2
 import numpy as np
 import time
 
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(1)
 if not cap.isOpened():
     print("yeah!")
 # Turn off auto exposure
 # cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0)
 cap.set(cv2.CAP_PROP_FPS, 30)
-face = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+face = cv2.CascadeClassifier("haarcascade_eye.xml")
 
 avgFPS = time.time()
 count = 0
@@ -23,8 +23,8 @@ while True:
 
         for (x, y, w, h) in faces:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
-    print(isinstance(faces, tuple))
-    print(isinstance(faces, np.ndarray))
+    # print(isinstance(faces, tuple))
+    # print(isinstance(faces, np.ndarray))
     cv2.imshow('output', frame)
     count += 1
     diff = time.time() - instFPS
