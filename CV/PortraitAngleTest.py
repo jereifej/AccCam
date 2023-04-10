@@ -12,11 +12,11 @@ def PortraitAngleTest(filename, image_ratio=.7):
     eye = cv2.CascadeClassifier("haarcascade_eye.xml")
 
     image_original = cv2.imread(filename)
-    image_original = cv2.resize(image_original,
-                                (0, 0),
-                                fx=image_ratio,
-                                fy=image_ratio,
-                                interpolation=cv2.INTER_NEAREST)
+    # image_original = cv2.resize(image_original,
+    #                             (0, 0),
+    #                             fx=image_ratio,
+    #                             fy=image_ratio,
+    #                             interpolation=cv2.INTER_NEAREST)
 
     gray = cv2.cvtColor(image_original, cv2.COLOR_BGR2GRAY)
     image1 = image_original
