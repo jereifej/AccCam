@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a9320bf-4210-48bd-8ff3-7dd041ea7863" name="Changes" comment="Update README.md">
+    <list default="true" id="58b31d01-1b02-47ab-9b0b-5560a1aa1341" name="Changes" comment="add step angle and uart comm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CV/FSM.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV/FSM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CV/DistanceFinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV/DistanceFinder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CV/FaceRecognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV/FaceRecognition.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,18 +24,28 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="WIP" />
+        <entry key="$PROJECT_DIR$" value="Dhinar" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="676c2ba9-a877-4f85-87db-d31fa4a0e8c3" />
+        <option name="url" value="https://github.com/jereifej/AccCam.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
-  <component name="ProjectId" id="2ML7aCIDVbvbeVxAGawuUkhscUX" />
+  <component name="ProjectId" id="2MvEPGlmNtlKlzDNnjjte9smGLn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,122 +54,132 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ereij/OneDrive/Documents/ECE1896/AccCam/NLP&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dhinar Gayatri/PycharmProjects/AccCam/CV&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ereij\OneDrive\Documents\ECE1896\AccCam\NLP" />
-      <recent name="C:\Users\ereij\OneDrive\Documents\ECE1896\AccCam" />
+      <recent name="C:\Users\Dhinar Gayatri\PycharmProjects\AccCam\CV" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ereij\OneDrive\Documents\ECE1896\AccCam\CV" />
-    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="FSM" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AccCam" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CV" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CV/FSM.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="serial" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="AccCam" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CV" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CV/serial.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.FSM" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1a9320bf-4210-48bd-8ff3-7dd041ea7863" name="Changes" comment="" />
-      <created>1677535069663</created>
+      <changelist id="58b31d01-1b02-47ab-9b0b-5560a1aa1341" name="Changes" comment="" />
+      <created>1678639629665</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1677535069663</updated>
-      <workItem from="1677535073418" duration="1701000" />
-      <workItem from="1677694189726" duration="900000" />
-      <workItem from="1677973999170" duration="5000" />
-      <workItem from="1678392930617" duration="16731000" />
-      <workItem from="1678630729670" duration="664000" />
+      <updated>1678639629665</updated>
     </task>
-    <task id="LOCAL-00001" summary="Now with virtual environment">
-      <created>1677535490445</created>
+    <task id="LOCAL-00001" summary="Add motor controller">
+      <created>1678895996355</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1677535490445</updated>
+      <updated>1678895996355</updated>
     </task>
-    <task id="LOCAL-00002" summary="Now with virtual environment">
-      <created>1677535574578</created>
+    <task id="LOCAL-00002" summary="Add motor controller">
+      <created>1680112175486</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1677535574578</updated>
+      <updated>1680112175486</updated>
     </task>
-    <task id="LOCAL-00003" summary="Added CV &amp; NLP Files">
-      <created>1677536060249</created>
+    <task id="LOCAL-00003" summary="Add motor controller">
+      <created>1680120183462</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1677536060249</updated>
+      <updated>1680120183462</updated>
     </task>
-    <task id="LOCAL-00004" summary="Updated README.md">
-      <created>1677696091494</created>
+    <task id="LOCAL-00004" summary="Add motor controller">
+      <created>1680120226533</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1677696091494</updated>
+      <updated>1680120226533</updated>
     </task>
-    <task id="LOCAL-00005" summary="Added FSM behavior to incorporate parallel Optical Flow detection and Facial Recognition">
-      <created>1678398141728</created>
+    <task id="LOCAL-00005" summary="add step angle and uart comm">
+      <created>1680182317515</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1678398141728</updated>
+      <updated>1680182317515</updated>
     </task>
-    <task id="LOCAL-00006" summary="- Integrate optical flow and face detection states into FSM, included code space for camera centering.&#10;- Clean up code&#10;- TODO: ???">
-      <created>1678419425652</created>
+    <task id="LOCAL-00006" summary="add step angle and uart comm">
+      <created>1680208881217</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1678419425652</updated>
+      <updated>1680208881217</updated>
     </task>
-    <task id="LOCAL-00007" summary="Update README.md">
-      <created>1678419733291</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1678419733291</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Update README.md">
-      <created>1678420281596</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1678420281596</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Update README.md">
-      <created>1678420727105</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1678420727105</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Now with virtual environment" />
-    <MESSAGE value="Added CV &amp; NLP Files" />
-    <MESSAGE value="Updated README.md" />
-    <MESSAGE value="Added FSM behavior to incorporate parallel Optical Flow detection and Facial Recognition" />
-    <MESSAGE value="- Integrate optical flow and face detection states into FSM, included code space for camera centering.&#10;- Clean up code&#10;- TODO: ???" />
-    <MESSAGE value="Update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AccCam$TempContrast.coverage" NAME="TempContrast Coverage Results" MODIFIED="1678393470126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
-    <SUITE FILE_PATH="coverage/AccCam$AudioTestLIVE.coverage" NAME="AudioTestLIVE Coverage Results" MODIFIED="1677536364439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
-    <SUITE FILE_PATH="coverage/AccCam$FSM.coverage" NAME="FSM Coverage Results" MODIFIED="1678630964530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
-    <SUITE FILE_PATH="coverage/AccCam$audiotest.coverage" NAME="audiotest Coverage Results" MODIFIED="1677536354554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
-    <SUITE FILE_PATH="coverage/AccCam$FaceRecognition.coverage" NAME="FaceRecognition Coverage Results" MODIFIED="1678417708124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
+    <MESSAGE value="Add motor controller" />
+    <MESSAGE value="add step angle and uart comm" />
+    <option name="LAST_COMMIT_MESSAGE" value="add step angle and uart comm" />
   </component>
 </project>
