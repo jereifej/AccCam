@@ -21,8 +21,6 @@ while True:
 
         for (x, y, w, h) in faces:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
-    print(isinstance(faces, tuple))
-    print(isinstance(faces, np.ndarray))
     cv2.imshow('output', frame)
     count += 1
     diff = time.time() - instFPS
