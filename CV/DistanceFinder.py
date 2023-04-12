@@ -12,7 +12,7 @@ RED = (0, 0, 255)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-# ser = serial.Serial('COM16', 115200, timeout=1)            #SERIAL
+ser = serial.Serial('COM16', 115200, timeout=1)            #SERIAL
 def Focal_Length_Finder(measured_distance, real_width, width_in_rf_image):
     # print(np.shape(width_in_rf_image))
     # print(np.shape(measured_distance))
@@ -32,8 +32,10 @@ def face_data(image):
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     # detecting face in the image
-    faces = face_detector.detectMultiScale(gray_image, 1.3, 5)
+    faces = face_detector.detectMultiScale(gray_image, 1.1, 5)
     dim = np.shape(image)
+    print(np.shape(faces))
+    # print(str(dim[0]) + " " + str(dim[1]))
     # looping through the faces detect in the image
     # getting coordinates x, y , width and height
     diff = 0
@@ -43,7 +45,7 @@ def face_data(image):
         cv2.circle(image, (x+int(w/2), y+int(h/2)), 5, RED, 1)
         diff = dim[1]/2 - (x+int(w/2))
         cv2.line(image, (x+int(w/2), int(dim[0]/2)), (int(dim[1]/2), int(dim[0]/2)), GREEN, 1)
-
+        # print(diff)
         # getting face width in the pixels
         face_width = w
 
@@ -55,22 +57,20 @@ def angleCalc(hypotenuse, opposite):
     return np.arcsin(opposite/hypotenuse)
 
 
-face_detector = cv2.CascadeClassifier("haarcascade_eye.xml")
+face_detector = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 ref_image = cv2.imread("RF.jpg")
 ref_image_face_width, _ = face_data(ref_image)
+# print(str(ref_image_face_width) + "here")
 Focal_length_found = Focal_Length_Finder(
     known_distance, known_width, ref_image_face_width)
 
 # print(Focal_length_found)
 
 # cv2.imshow("ref_image", ref_image)
-cap = cv2.VideoCapture(1, cv2.CAP_MSMF)
+cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)          #CAP_DSHOW) need change to this when using ext camera
 fonts = cv2.FONT_HERSHEY_COMPLEX
 
-test = struct.pack('f', 0.9424431920051575)
-print(test)
-# ser.write(test)
 
 while True:
 
@@ -91,9 +91,13 @@ while True:
         # and Known_distance(centimeters)
         Distance = Distance_finder(
             Focal_length_found, known_width, face_width_in_frame)
+        # printtime(str(Distance) + " " + str(face_difference))
         angle = angleCalc(Distance, scaled_face_difference)
 
         new_angle = angle *180/(np.pi)
+
+        ser_angle = struct.pack('f', new_angle)
+        ser.write(ser_angle)
 
         # draw line as background of text
         cv2.line(frame, (30, 30), (230, 30), RED, 32)
