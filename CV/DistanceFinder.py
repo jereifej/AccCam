@@ -102,6 +102,7 @@ while True:
         sendangle = struct.pack('f', new_angle)
         ser.write(sendangle)
 
+
         # draw line as background of text
         cv2.line(frame, (30, 30), (230, 30), RED, 32)
         cv2.line(frame, (30, 30), (230, 30), BLACK, 28)
