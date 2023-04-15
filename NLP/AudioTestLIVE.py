@@ -1,9 +1,14 @@
 import speech_recognition as sr
+import datetime
 
 r = sr.Recognizer()
 m = sr.Microphone()
 
-f = open("ClosedCaptions.txt", "w")
+now = datetime.datetime.now()
+dt_string = now.strftime("%d_%m_%Y_%H_%M_%S")
+print("date and time =", dt_string)
+
+f = open("ClosedCaptions" + dt_string + ".txt", "x")
 
 try:
     print("A moment of silence, please...")
