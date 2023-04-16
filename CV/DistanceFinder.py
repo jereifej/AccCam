@@ -40,10 +40,10 @@ def face_data(image):
     diff = 0
     for (x, y, h, w) in faces:
         # draw the rectangle on the face
-        cv2.rectangle(image, (x, y), (x + w, y + h), GREEN, 2)
-        cv2.circle(image, (x+int(w/2), y+int(h/2)), 5, RED, 1)
+        # cv2.rectangle(image, (x, y), (x + w, y + h), GREEN, 2)
+        # cv2.circle(image, (x+int(w/2), y+int(h/2)), 5, RED, 1)
         diff = dim[1]/2 - (x+int(w/2))
-        cv2.line(image, (x+int(w/2), int(dim[0]/2)), (int(dim[1]/2), int(dim[0]/2)), GREEN, 1)
+        # cv2.line(image, (x+int(w/2), int(dim[0]/2)), (int(dim[1]/2), int(dim[0]/2)), GREEN, 1)
         # print(diff)
         # getting face width in the pixels
         face_width = w
@@ -104,13 +104,13 @@ while True:
 
 
         # draw line as background of text
-        cv2.line(frame, (30, 30), (230, 30), RED, 32)
-        cv2.line(frame, (30, 30), (230, 30), BLACK, 28)
+        # cv2.line(frame, (30, 30), (230, 30), RED, 32)
+        # cv2.line(frame, (30, 30), (230, 30), BLACK, 28)
 
         # Drawing Text on the screen
-        cv2.putText(
-            frame, f"Angle: {round(angle*180/(np.pi), 2)} deg", (30, 35),
-            fonts, 0.6, GREEN, 2)
+        # cv2.putText(
+        #     frame, f"Angle: {round(angle*180/(np.pi), 2)} deg", (30, 35),
+        #     fonts, 0.6, GREEN, 2)
 
     # show the frame on the screen
     cv2.imshow("frame", frame)
