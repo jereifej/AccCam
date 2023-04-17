@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58b31d01-1b02-47ab-9b0b-5560a1aa1341" name="Changes" comment="Final Working Commit">
+    <list default="true" id="58b31d01-1b02-47ab-9b0b-5560a1aa1341" name="Changes" comment="Main Push">
+      <change afterPath="$PROJECT_DIR$/CV/AngleVideoDemo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CV/DistanceFinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV/DistanceFinder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CV/PortraitAngleTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/CV/PortraitAngleTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680112754384</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Main Push">
+      <created>1681670828098</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681670828098</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,18 +292,30 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gunnarjoe" />
     <MESSAGE value="gunnarjoe &lt;3" />
-    <option name="LAST_COMMIT_MESSAGE" value="gunnarjoe &lt;3" />
+    <MESSAGE value="Main Push" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main Push" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/CV/PortraitAngleTest.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AccCam$serial.coverage" NAME="serial Coverage Results" MODIFIED="1681578205904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
-    <SUITE FILE_PATH="coverage/AccCam$Multithreading.coverage" NAME="Multithreading Coverage Results" MODIFIED="1681588108609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
+    <SUITE FILE_PATH="coverage/AccCam$Multithreading.coverage" NAME="Multithreading Coverage Results" MODIFIED="1681676572169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
     <SUITE FILE_PATH="coverage/AccCam$TempContrast.coverage" NAME="TempContrast Coverage Results" MODIFIED="1679334326336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
     <SUITE FILE_PATH="coverage/AccCam$VideoOpen.coverage" NAME="VideoOpen Coverage Results" MODIFIED="1680799400002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
     <SUITE FILE_PATH="coverage/AccCam$AudioTestLIVE.coverage" NAME="AudioTestLIVE Coverage Results" MODIFIED="1681581262328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
-    <SUITE FILE_PATH="coverage/AccCam$DistanceFinder.coverage" NAME="DistanceFinder Coverage Results" MODIFIED="1681592223867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
+    <SUITE FILE_PATH="coverage/AccCam$DistanceFinder.coverage" NAME="DistanceFinder Coverage Results" MODIFIED="1681676615006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
+    <SUITE FILE_PATH="coverage/AccCam$AngleVideoDemo.coverage" NAME="AngleVideoDemo Coverage Results" MODIFIED="1681740033575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
     <SUITE FILE_PATH="coverage/AccCam$FSM.coverage" NAME="FSM Coverage Results" MODIFIED="1679341967130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
     <SUITE FILE_PATH="coverage/AccCam$audiotest.coverage" NAME="audiotest Coverage Results" MODIFIED="1677536354554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
     <SUITE FILE_PATH="coverage/AccCam$FaceRecognition.coverage" NAME="FaceRecognition Coverage Results" MODIFIED="1681578210047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
-    <SUITE FILE_PATH="coverage/AccCam$PortraitAngleTest.coverage" NAME="PortraitAngleTest Coverage Results" MODIFIED="1681150703239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
+    <SUITE FILE_PATH="coverage/AccCam$PortraitAngleTest.coverage" NAME="PortraitAngleTest Coverage Results" MODIFIED="1681674180336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CV" />
   </component>
 </project>
